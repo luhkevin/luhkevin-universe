@@ -1,0 +1,26 @@
+{
+    "id": "{{ servicesim.node_id }}",
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "network": "BRIDGE",
+            "image": "netsil/servicesim:{{ servicesim.node_image_tag }}",
+            "forcePullImage": true,
+            "portMappings": [
+                {"containerPort": 8000, "hostPort": {{ servicesim.node_port }}, "protocol": "tcp"}
+            ]
+        }
+    },
+     "env": {
+        "NODE_ROUTES": "{{ servicesim.node_routes }}"
+    },
+    "args": ["-a", "0.0.0.0", "-n", "{{ servicesim.node_type }}", "-p", "8000", "-f", "{{ servicesim.node_function }}"],
+    "cpus": 0.2,
+    "mem": 128.0,
+    "disk": 2.0,
+    "labels": {
+        "HAPROXY_GROUP": "external",
+        "HAPROXY_0_PORT": "{{ servicesim.node_lbport }}"
+    },
+    "instances": {{ servicesim.node_count }}
+}

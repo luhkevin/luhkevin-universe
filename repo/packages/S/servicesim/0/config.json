@@ -1,0 +1,65 @@
+{
+  "properties": {
+    "servicesim": {
+      "description": "Servicesim configuration",
+      "properties": {
+        "node_id": {
+          "default": "node",
+          "description": "Used as the primary point of identification of a node.",
+          "type": "string"
+        },
+        "node_type": {
+          "default": "node",
+          "description": "Another identifier for a node.",
+          "type": "string"
+        },
+        "node_port": {
+          "default": 31000,
+          "description": "Port on which to run the node.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "node_function": {
+          "default": "regular",
+          "description": "The type of node -- regular, faulty400, faulty500, etc...",
+          "type": "string"
+        },
+        "node_routes": {
+          "default": "{}",
+          "description": "The routes (e.g. next-hops) for each node, in the form of a JSON string.",
+          "type": "string"
+        },
+        "node_image_tag": {
+          "default": "latest",
+          "description": "The tag of the servicesim docker image.",
+          "type": "string"
+        },
+        "node_lbport": {
+          "default": 10080,
+          "description": "The serviceport.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "node_count": {
+          "default": 1,
+          "description": "The number of instances.",
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "node_id",
+        "node_type",
+        "node_port",
+        "node_function",
+        "node_routes",
+        "node_image_tag"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "servicesim"
+  ],
+  "type": "object"
+}

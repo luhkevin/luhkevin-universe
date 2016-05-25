@@ -1,0 +1,12 @@
+{
+  "packagingVersion": "2.0",
+  "name": "servicesim",
+  "version": "1.0.0",
+  "tags": ["mesosphere", "framework", "servicesim"],
+  "maintainer": "support@praqma.com",
+  "description": "servicesim",
+  "scm": "https://github.com/luhkevin/servicesim.git",
+  "postInstallNotes": "Servicesim succesfully installed.",
+  "postUninstallNotes": "Servicesim successfully uninstalled.",
+  "preInstallNotes": "No pre-install notes."
+}
