@@ -17,7 +17,8 @@
     "args": ["-a", "0.0.0.0", "-n", "{{ servicesim.node_type }}", "-p", "8000", "-f", "{{ servicesim.node_function }}"],
     "cpus": 0.2,
     "mem": 128.0,
-    "disk": 2.0,
+    "disk": 1024.0,
+    "acceptedResourceRoles": [ "slave_public", "*" ],
     "labels": {
         "HAPROXY_GROUP": "external",
         "HAPROXY_0_PORT": "{{ servicesim.node_lbport }}"
